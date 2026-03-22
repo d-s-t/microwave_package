@@ -1,0 +1,66 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs} % For professional tables
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=0.8in}
+
+\title{\textbf{Microwave Packaging \& PCB Design Specifications}}
+\author{David Shem-Tov\\{\small Nadav Katz Lab}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{PCB Specifications}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l|l}
+\toprule
+\textbf{Parameter} & \textbf{Specification} \\ \bottomrule
+Substrate Material & \textcolor{red}{some Rogers (select from \href{https://github.com/d-s-t/lab-activity-log/blob/main/2026-03-18_log.md\#suggested-materials}{here})} \\
+Conductive Layer & \textcolor{orange}{Copper + Gold Plating (Non-Magnetic)}\footnotemark\footnotemark \\
+Transmission Line & Coplanar Waveguide (CPW) \\
+Target Impedance & 50 $\Omega$ \\
+Frequency Range & 9 kHz -- 20 GHz \\
+PCB design Tool & Altume \\
+connector type & \textcolor{red}{SMA / SMP} \\
+Substrate Height ($h$) & \textcolor{red}{Dependent on Rogers series} \\
+Trace Width ($w$) & \textcolor{red}{Calculate via CPW model} \\
+Gap Width ($s$) & \textcolor{red}{Calculate via CPW model} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\footnotetext[\numexpr\value{footnote}-1]{make sure that the adhesion layer is not magnetic -- check EPIG (Electroless Palladium Immersion Gold)}
+\footnotetext{the plating prevents oxidation of the copper}
+
+\section{Box}
+
+\subsection*{Design Overview}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Feature} & \textbf{Decision / Status} \\ \bottomrule
+Base Material & \textcolor{orange}{Aluminum 6061}\footnotemark \\
+design (solidworks) & \textcolor{red}{to be developed} \\
+HFSS simulation & \textcolor{red}{simulate the solidworks design} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\footnotetext{need to review alternatives}
+
+\subsection*{Design Checklist}
+
+\begin{itemize}
+    \item[$\square$] mounting wings to connect to the refrigerator.
+    \item[$\square$] Parasitic Control -- Minimize cavity modes (\href{https://arxiv.org/abs/1906.05425}{arXiv:1906.05425}) 
+\end{itemize}
+
+\end{document}
