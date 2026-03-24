@@ -1,15 +1,25 @@
 Dim swApp As Object
 Dim Part As Object
 Dim boolstatus As Boolean
-Dim savePath As String
+Dim templatePath As String
 
 Sub main()
     Set swApp = Application.SldWorks
-    ' Create a new part using the default template
-    Set Part = swApp.NewDocument("C:\ProgramData\SOLIDWORKS\SOLIDWORKS 2023\templates\Part.prtdot", 0, 0, 0)
+    
+    ' 8 represents the constant for swDefaultTemplatePart
+    templatePath = swApp.GetUserPreferenceStringValue(8) 
+    
+    ' Check if a template was actually found
+    If templatePath = "" Then
+        MsgBox "No default part template found in SolidWorks settings.", vbCritical
+        Exit Sub
+    End If
+    
+    ' Create the new document using the dynamic path
+    Set Part = swApp.NewDocument(templatePath, 0, 0, 0)
     
     If Part Is Nothing Then
-        MsgBox "Failed to open part. You may need to update the default template path in the code."
+        MsgBox "Failed to open part."
         Exit Sub
     End If
 
