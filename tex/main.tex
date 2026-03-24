@@ -7,6 +7,8 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{enumitem}
+
 \geometry{margin=0.8in}
 
 \title{\textbf{Microwave Packaging \& PCB Design Specifications}}
@@ -49,7 +51,7 @@ Chip Mounting Cavity &\textcolor{orange}{$6.3\times6.3\times1\quad mm^3$}\\
 \begin{tabular}{ll}
 \toprule
 \textbf{Feature} & \textbf{Decision / Status} \\ \bottomrule
-Base Material & \textcolor{orange}{Aluminum 6061}\footnotemark \\
+Base Material & \textcolor{orange}{Aluminum 6061} or \textcolor{orange}{gold-plated copper} \footnotemark \\
 design (solidworks) & \textcolor{red}{to be developed} \\
 HFSS simulation & \textcolor{red}{simulate the solidworks design} \\
 \bottomrule
@@ -59,9 +61,11 @@ HFSS simulation & \textcolor{red}{simulate the solidworks design} \\
 
 \subsection*{Design Checklist}
 
-\begin{itemize}
-    \item[$\square$] mounting wings to connect to the refrigerator.
-    \item[$\square$] Parasitic Control -- Minimize cavity modes (\href{https://arxiv.org/abs/1906.05425}{arXiv:1906.05425}) 
+\begin{itemize}[label={$\square$}]
+    \item mounting wings to connect to the refrigerator.
+    \item Parasitic Control -- Minimize cavity modes and conductivity loss (\href{https://arxiv.org/abs/1906.05425}{arXiv:1906.05425}) 
+    \item Tightness (the box should close the PCB from all sides).
+    \item Anchoring to the refrigerator.
 \end{itemize}
 
 \end{document}
