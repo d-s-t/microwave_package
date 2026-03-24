@@ -1,0 +1,4 @@
+Design_ID,Box_Length@Sketch1,Box_Width@Sketch1,Box_Thickness@Boss-Extrude1,Total_Wing_Span@Sketch2,Wing_Length@Sketch2,Wing_Thickness@Boss-Extrude2,PCB_Cavity_Length@Sketch3,PCB_Cavity_Width@Sketch3,PCB_Cavity_Depth@Cut-Extrude1,Chip_Cavity_Length@Sketch4,Chip_Cavity_Width@Sketch4,Chip_Cavity_Depth@Cut-Extrude2
+Default,40,40,20,60,40,5,30,30,5,6.3,6.3,1
+Wide_Mount,40,40,20,80,40,5,30,30,5,6.3,6.3,1
+High_Frequency_Mode,35,35,20,55,35,5,25,25,4,6.3,6.3,1
