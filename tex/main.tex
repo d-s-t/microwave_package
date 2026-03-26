@@ -47,65 +47,9 @@
     % \item[\notstarted]
 \end{itemize}
 
-\section{PCB Specifications}
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{l|l}
-\toprule
-\textbf{Parameter} & \textbf{Specification} \\ \bottomrule
-Substrate Material & \textcolor{red}{some Rogers (select from \href{https://github.com/d-s-t/lab-activity-log/blob/main/2026-03-18_log.md\#suggested-materials}{here})} \\
-Conductive Layer & \textcolor{orange}{Copper + Gold Plating (Non-Magnetic)}\footnotemark\footnotemark \\
-Target Impedance & 50 $\Omega$ \\
-Frequency Range & 9 kHz -- 18 GHz\ \footnotemark\\
-% PCB design Tool & Altume \\
-connector type & SMP (Amphenol RF 925-NM196J-51P non-magnetic) \\
-connector count & 2 \textcolor{orange}{with option to add more.} \\ 
-Transmission Line & Coplanar Waveguide (CPW) \\
-\quad Substrate Height ($h$) & \textcolor{orange}{1 mm} \\
-\quad Trace Width ($w$) & \textcolor{red}{Calculate via CPW model} \\
-\quad Gap Width ($s$) & \textcolor{red}{Calculate via CPW model} \\
-Chip Mounting Cavity &\textcolor{orange}{$6.3\times6.3\  mm^2$\quad through}\\
-Manufacturer & \textcolor{red}{\textbf{??}} \\
-\bottomrule
-\end{tabular}
-\end{table}
-\footnotetext[\numexpr\value{footnote}-2]{make sure that the adhesion layer is not magnetic -- check EPIG (Electroless Palladium Immersion Gold)}
-\footnotetext[\numexpr\value{footnote}-1]{the plating prevents oxidation of the copper}
-\footnotetext[\numexpr\value{footnote}]{18GHz is the limit of the SMP connectors we have. option to buy \href{https://www.svmicrowave.com/smpm-male-non-magnetic-pcb-surface-mount-connector-fd}{up-to 20GHz connector}.}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\linewidth]{tex/CPW.png}
-\end{figure}
-
-\newpage
-\section{Box}
-
-\subsection*{Design Overview}
-\begin{table}[h!]
-\centering
-\begin{tabular}{l|l}
-\toprule
-\textbf{Parameter} & \textbf{Specification} \\ \bottomrule
-Base Material & \textcolor{orange}{Aluminum 6061} or \textcolor{orange}{gold-plated copper} \footnotemark \\
-pedestal drill $\Delta$ & \textcolor{orange}{3.8mm} \\
-\bottomrule
-\end{tabular}
-\end{table}
-\footnotetext{need to review alternatives}
-
-\subsection*{Design Checklist}
-
-\begin{itemize}[label={$\square$}]
-    \item mounting wings to connect to the refrigerator.
-    \item Parasitic Control -- Minimize cavity modes and conductivity loss (\href{https://arxiv.org/abs/1906.05425}{arXiv:1906.05425}) 
-    \item Tightness (the box should close the PCB from all sides).
-    \item Anchoring to the refrigerator.
-\end{itemize}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\linewidth]{tex/box example.png}
-\end{figure}
+\include{tex/pcb}
+\include{tex/box}
+\include{tex/materials}
+\include{tex/alternatives}
 
 \end{document}
